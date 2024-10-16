@@ -22,7 +22,7 @@ class _CasinoState extends State<Casino> with TickerProviderStateMixin {
   String randomLooseMessage = '';
   bool isBigWin = false;
   bool isWin = false;
-  List<AnimationController> _animationControllers = [];
+  final List<AnimationController> _animationControllers = [];
 
   void getRandomImages() {
     setState(() {
@@ -33,13 +33,12 @@ class _CasinoState extends State<Casino> with TickerProviderStateMixin {
         int randomNumber = Random().nextInt(7) + 1;
         images[i] = 'images/image$randomNumber.png';
 
-        // Create an animation controller for each image
         AnimationController controller = AnimationController(
-          duration: const Duration(milliseconds: 500), // Duration of the fade-in
+          duration: const Duration(milliseconds: 500),
           vsync: this,
         );
         _animationControllers.add(controller);
-        controller.forward(); // Start the animation
+        controller.forward();
       }
       checkWinCondition();
     });
@@ -88,7 +87,6 @@ class _CasinoState extends State<Casino> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    // Dispose of the animation controllers
     for (var controller in _animationControllers) {
       controller.dispose();
     }
