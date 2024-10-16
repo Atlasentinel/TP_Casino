@@ -16,7 +16,7 @@ class _CasinoState extends State<Casino> with TickerProviderStateMixin {
     "TU ES RICHES !!!", "Bien joué mec", "Las Vegaaaaaaaas",
   ];
   List<String> looseMessages = [
-    "T'es un merde", "C'est pas grâve, t'a juste perdue ta femme", "Ton argent = mon argent", "REMBOURSE L'ARGENT", "Ton chien te méprise"
+    "Oooh non t'a perdue", "C'est pas grâve, recommence", "Ton argent = mon argent", "REMBOURSE L'ARGENT"
   ];
   String randomVictoryMessage = '';
   String randomLooseMessage = '';
